@@ -1,0 +1,19 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+.rewards {
+  @include max-width;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 52rem;
+  .content {
+    max-width: 56em;
+    h2 {
+      margin-block: 5rem;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+}

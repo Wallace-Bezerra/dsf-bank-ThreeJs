@@ -1,0 +1,27 @@
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+.header {
+  .container {
+    @include max-width;
+    display: flex;
+    justify-content: space-between;
+    .content {
+      max-width: 50rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      span {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+      }
+      h1 {
+        @include gradient-color;
+        font-size: 7rem;
+        font-weight: 500;
+      }
+    }
+    .model3d {
+      width: 100%;
+    }
+  }
+}
