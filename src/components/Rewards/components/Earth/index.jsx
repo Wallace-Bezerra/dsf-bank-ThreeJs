@@ -3,21 +3,23 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
-useGLTF.preload("/earth/scene.gltf");
+// useGLTF.preload("/earth/scene.gltf");
+useGLTF.preload("/planet/scene.gltf");
 const Earth = ({ scale }) => {
-  const earth = useGLTF("/earth/scene.gltf");
+  // const earth = useGLTF("/earth/scene.gltf");
+  const earth = useGLTF("/planet/scene.gltf");
   return <primitive object={earth.scene} scale={scale} />;
 };
 
 export const EarthComponent = () => {
-  const [scale, setScale] = useState(0.025);
+  const [scale, setScale] = useState(3);
   useEffect(() => {
     const ResizeComponent = () => {
       console.log("Rezieeee");
       if (window.innerWidth <= 1024) {
-        setScale(0.012);
+        setScale(3);
       } else {
-        setScale(0.02);
+        setScale(3);
       }
     };
     window.addEventListener("resize", ResizeComponent);

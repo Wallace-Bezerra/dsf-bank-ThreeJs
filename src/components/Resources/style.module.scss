@@ -33,4 +33,16 @@
       }
     }
   }
+  @include device(tablet) {
+    margin-bottom: 30px;
+    .container {
+      .list {
+        flex-direction: column;
+        gap: 30px;
+        .item {
+          max-width: 300px;
+        }
+      }
+    }
+  }
 }

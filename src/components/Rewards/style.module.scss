@@ -2,18 +2,53 @@
 @import "@/styles/variables.scss";
 .rewards {
   @include max-width;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  height: 52rem;
-  .content {
-    max-width: 56em;
-    h2 {
-      margin-block: 5rem;
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .content {
+      max-width: 56em;
+      h2 {
+        margin-block: 5rem;
+      }
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        p {
+          max-width: 500px;
+        }
+      }
     }
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
+    .model3d {
+      max-width: 520px;
+      width: 100%;
+    }
+  }
+  @include device(notebook) {
+    margin-bottom: 40px;
+    .container {
+      grid-template-columns: 1fr;
+      margin-bottom: 10px;
+      justify-items: center;
+      .content {
+        h2 {
+          text-align: center;
+        }
+        ul {
+          align-items: center;
+        }
+      }
+      .model3d {
+        height: 300px;
+      }
+    }
+  }
+  @include device(tablet) {
+    .container {
+      .model3d {
+        max-width: 320px;
+      }
     }
   }
 }

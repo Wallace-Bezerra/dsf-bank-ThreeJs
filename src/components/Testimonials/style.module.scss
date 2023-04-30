@@ -1,5 +1,42 @@
 @import "@/styles/mixins.scss";
 @import "@/styles/variables.scss";
-.rewards {
+.testimonials {
   @include max-width;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  align-items: center;
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    .item {
+      background-color: $lightBlack;
+      padding: 3rem;
+      border-radius: 8px;
+      .heading {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 20px;
+        img {
+          border-radius: 50%;
+        }
+        h3 {
+          font-weight: 500;
+          line-height: normal;
+        }
+        span {
+          font-size: 1.4rem;
+          line-height: normal;
+        }
+      }
+    }
+  }
+  @include device(notebook) {
+    margin-bottom: 80px;
+    .list {
+      grid-template-columns: 1fr;
+    }
+  }
 }

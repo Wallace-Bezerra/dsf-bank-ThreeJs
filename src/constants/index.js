@@ -127,7 +127,7 @@ export const footer = {
     { name: "Trabalhe Conosco", url: "#" },
     { name: "Fale Conosco", url: "#" },
   ],
-  contact: [
+  contacts: [
     "contato@dsfbank.com.br",
     "(00) 1234-5678",
     "Rua Fictícia, 1234, Bairro Fictício, Cidade Fictícia - Estado Fictício",

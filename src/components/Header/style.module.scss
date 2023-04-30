@@ -5,6 +5,7 @@
     @include max-width;
     display: flex;
     justify-content: space-between;
+
     .content {
       max-width: 50rem;
       display: flex;
@@ -21,7 +22,27 @@
       }
     }
     .model3d {
+      max-width: 500px;
       width: 100%;
+    }
+  }
+  @include device(notebook) {
+    .container {
+      flex-direction: column;
+      margin-bottom: 10px;
+      align-items: center;
+      .model3d {
+        height: 300px;
+      }
+    }
+  }
+  @include device(tablet) {
+    .container {
+      .content {
+        h1 {
+          font-size: 6rem;
+        }
+      }
     }
   }
 }

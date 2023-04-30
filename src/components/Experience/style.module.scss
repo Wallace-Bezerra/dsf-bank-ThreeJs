@@ -36,4 +36,18 @@
       border-right: 2px solid rgba($gray, 0.6);
     }
   }
+  @include device(notebook) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    justify-items: center;
+    .content {
+      &:first-of-type {
+        border: none;
+      }
+      &.blue::after,
+    &.orange::after{
+      top:-20%;
+    }
+    }
+  }
 }

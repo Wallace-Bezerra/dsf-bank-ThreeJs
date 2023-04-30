@@ -1,8 +1,19 @@
 import { resources } from "@/constants";
 import styles from "./style.module.scss";
-import Image from "next/image";
+import { motion } from "framer-motion";
 
 export const Resources = () => {
+  const motionProps = {
+    initial: { opacity: 0, y: 100 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: {
+      type: "spring",
+      bounce: 0.4,
+      duration: 0.8,
+      delay: 0.1,
+    },
+  };
   const { title, subtitle, lists } = resources;
   const renderListsResources = lists.map((list, index) => {
     return (
@@ -14,12 +25,16 @@ export const Resources = () => {
     );
   });
   return (
-    <section id="resources" className={styles.resources}>
+    <motion.section
+      {...motionProps}
+      id="resources"
+      className={styles.resources}
+    >
       <div className={styles.container}>
         <h2 className="title">{title}</h2>
         <p className="light">{subtitle}</p>
         <ul className={styles.list}>{renderListsResources}</ul>
       </div>
-    </section>
+    </motion.section>
   );
 };

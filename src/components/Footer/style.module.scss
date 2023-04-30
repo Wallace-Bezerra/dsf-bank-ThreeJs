@@ -1,3 +1,72 @@
-.navbar {
-  background-color: red;
+@import "@/styles/mixins.scss";
+@import "@/styles/variables.scss";
+.footer {
+  @include max-width;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  .container1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    .column1 {
+      p {
+        max-width: 250px;
+      }
+    }
+    .column2,
+    .column3 {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+    }
+  }
+  .container2 {
+    border-top: 1px solid rgba($gray, 0.6);
+    padding-top: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      gap: 30px;
+      li {
+        a {
+          svg {
+            width: 30px;
+            height: 30px;
+            opacity: 0.6;
+            color: $gray;
+            transition: all 0.4s;
+            &:hover {
+              opacity: 0.9;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include device(tablet) {
+    .container1 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .container2 {
+      flex-direction: column;
+      gap: 30px;
+      ul {
+        align-self: flex-end;
+      }
+    }
+  }
+  @include device(mobile) {
+    gap: 26px;
+    .container1 {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
 }
