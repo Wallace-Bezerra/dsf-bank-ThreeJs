@@ -33,7 +33,13 @@ export const Rewards = () => {
           </motion.h2>
           <ul>{RenderListRewards}</ul>
         </div>
-        <motion.div {...motionProps(160, 0, 0.3)} className={styles.model3d}>
+        <motion.div
+          className={styles.model3d}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ durantion: 1, delay: 0.4 }}
+        >
           <EarthComponent />
         </motion.div>
       </div>

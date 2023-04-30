@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 @mixin max-width {
   width: 100%;
@@ -39,22 +39,22 @@
 }
 
 @mixin device($device) {
-  @if $device == 'desktop' {
+  @if $device == "desktop" {
     @media only screen and (max-width: 1440px) {
       @content;
     }
   }
-  @if $device == 'notebook' {
+  @if $device == "notebook" {
     @media only screen and (max-width: 1024px) {
       @content;
     }
   }
-  @if $device == 'tablet' {
+  @if $device == "tablet" {
     @media only screen and (max-width: 768px) {
       @content;
     }
   }
-  @if $device == 'mobile' {
+  @if $device == "mobile" {
     @media only screen and (max-width: 425px) {
       @content;
     }
