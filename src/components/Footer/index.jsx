@@ -6,21 +6,21 @@ export const Footer = () => {
   const { contacts, copy, description, links, social } = footer;
   const renderLinks = links.map((link, index) => {
     return (
-      <li key={index} className="p light">
+      <li key={`${index} link `} className="p light">
         <Link href={link.url}>{link.name}</Link>
       </li>
     );
   });
   const renderContacts = contacts.map((contact, index) => {
     return (
-      <li key={index} className="p light">
+      <li key={`${index} contact `} className="p light">
         {contact}
       </li>
     );
   });
   const renderSocial = social.map((social, index) => {
     return (
-      <li key={index}>
+      <li key={`${index} social `}>
         <Link href={social.url}>{social.component}</Link>
       </li>
     );

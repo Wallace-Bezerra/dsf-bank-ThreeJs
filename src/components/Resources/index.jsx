@@ -17,7 +17,7 @@ export const Resources = () => {
   const { title, subtitle, lists } = resources;
   const renderListsResources = lists.map((list, index) => {
     return (
-      <li key={index} className={styles.item}>
+      <li key={`${index} ${list.title}`} className={styles.item}>
         {list.icon}
         <h3 className="p">{list.title}</h3>
         <h4 className="p light">{list.subtitle}</h4>

@@ -25,7 +25,7 @@ export const Testimonials = () => {
     return (
       <motion.li
         className={styles.item}
-        key={index}
+        key={`${index} ${list.name}`}
         variants={motionProps}
         custom={index}
         viewport={{ once: true }}

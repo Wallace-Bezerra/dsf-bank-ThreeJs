@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   const renderLinks = navLinks.map((link, index) => {
     return (
-      <motion.li key={index} variants={listItemMotionProps}>
+      <motion.li key={`${index} ${link.name}`} variants={listItemMotionProps}>
         <a href={link.url}>{link.name}</a>
       </motion.li>
     );

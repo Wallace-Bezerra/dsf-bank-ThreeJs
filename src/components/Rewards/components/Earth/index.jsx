@@ -12,7 +12,6 @@ export const EarthComponent = () => {
   const [scale, setScale] = useState(3);
   useEffect(() => {
     const ResizeComponent = () => {
-      console.log("Rezieeee");
       if (window.innerWidth <= 1024) {
         setScale(3);
       } else {
@@ -20,8 +19,6 @@ export const EarthComponent = () => {
       }
     };
     window.addEventListener("resize", ResizeComponent);
-
-    console.log("useEffect");
 
     return () => {
       window.removeEventListener("resize", ResizeComponent);

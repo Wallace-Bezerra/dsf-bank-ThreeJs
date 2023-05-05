@@ -2,7 +2,7 @@ import { EarthComponent } from "./components/Earth";
 import styles from "./style.module.scss";
 import { rewards } from "@/constants";
 import { motion } from "framer-motion";
-export const Rewards = () => {
+export function Rewards() {
   const motionProps = (initialX, finalX, delay) => ({
     initial: { opacity: 0, x: initialX },
     whileInView: { opacity: 1, x: finalX },
@@ -17,7 +17,10 @@ export const Rewards = () => {
   const { lists, title } = rewards;
   const RenderListRewards = lists.map((list, index) => {
     return (
-      <motion.li {...motionProps(-100, 0, 0.1)} key={index}>
+      <motion.li
+        key={`${index} ${list.title} listRewards`}
+        {...motionProps(-100, 0, 0.1)}
+      >
         <h3 className="p">{list.title}</h3>
         <p className="light">{list.subtitle}</p>
       </motion.li>
@@ -45,4 +48,4 @@ export const Rewards = () => {
       </div>
     </section>
   );
-};
+}
