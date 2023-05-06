@@ -1,12 +1,7 @@
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense, useEffect, useState } from "react";
-
-useGLTF.preload("/planet/scene.gltf");
-const Earth = ({ scale }) => {
-  const earth = useGLTF("/planet/scene.gltf");
-  return <primitive object={earth.scene} scale={scale} />;
-};
+import { Planet } from "./planet";
 
 export const EarthComponent = () => {
   const [scale, setScale] = useState(3);
@@ -25,7 +20,7 @@ export const EarthComponent = () => {
     };
   }, []);
   return (
-    <Canvas>
+    <Canvas resize={{ scroll: false }}>
       <Suspense fallback={null}>
         <OrbitControls enableZoom={false} autoRotate={true} />
         <ambientLight intensity={0.05} color="lightblue" />
@@ -36,7 +31,7 @@ export const EarthComponent = () => {
           penumbra={1}
           castShadow
         />
-        <Earth scale={scale} />
+        <Planet scale={scale} />
       </Suspense>
     </Canvas>
   );

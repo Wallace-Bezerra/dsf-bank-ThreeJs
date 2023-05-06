@@ -26,7 +26,6 @@ export const Header = () => {
           <CreditCardComponent />
         </motion.div>
       </div>
-      <div></div>
     </header>
   );
 };
