@@ -5,8 +5,6 @@
 <p align="left">
 Landing Page simples feita com NextJs, Sass, Framer Motion, foi utilizando Three.Js com React-three-fiber para renderizações de elementos 3d
 
-Crétidos [Canal do Front](https://www.youtube.com/watch?v=_PyTskiHmvQ)- video onde adquiri conhecimentos sobre Three js
-
 </p>
 
 <br>
